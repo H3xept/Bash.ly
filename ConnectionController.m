@@ -4,13 +4,13 @@
 
 -(NSData *)getJsonFromAPIWithUrl:(NSString *)url
 {
-	NSURL* validURL = [NSURL URLWithString:url];
+	NSURL* validURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api-ssl.bitly.com/v3/shorten?access_token=%@&longUrl=%@",self.auth_code,
+			[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]]];
 
 	if(validURL != nil){
 		NSMutableURLRequest *APIRequest = [[NSMutableURLRequest alloc] init];
 		[APIRequest setHTTPMethod:@"GET"];
-		[APIRequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api-ssl.bitly.com/v3/shorten?access_token=%@&longUrl=%@",self.auth_code,
-			[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]]]];
+		[APIRequest setURL:validURL];
 
 		NSHTTPURLResponse *responseCode;
 
