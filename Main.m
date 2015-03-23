@@ -12,7 +12,9 @@ int main(int argc, char const *argv[])
 		}
 
 		ConnectionController* newConn = [[ConnectionController alloc] init];
-		newConn.auth_code = @"f2e49795deed18c2e2b679966e24a999cdeaa633";
+
+		newConn.auth_code = @"YOUR AUTH_CODE FROM BIT.LY (http://bit.ly/1ECVkRV)";
+		
 		NSString* shortedUrl = [newConn getShortedURL:[NSString stringWithUTF8String:argv[1]]];
 		NSPasteboard* pBoard = [NSPasteboard generalPasteboard];
 		NSArray* urlArr = [NSArray arrayWithObject:shortedUrl];
