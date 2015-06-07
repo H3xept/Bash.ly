@@ -1,4 +1,6 @@
 # Bash.ly
+This simple utility was only a development exercise, expect bugs and weird stuff while using it.
+
 Fast shrink an url from terminal.
 ##Installation
 You'll need to insert in the code your auth key for bit.ly (no worries! Just register/login and ask for it here: http://bit.ly/1ECVkRV) at line 16. (`newConn.auth_code`)
